@@ -193,6 +193,7 @@ def user_stats(df):
     print('-'*40)
 
 def show_data(df):
+    """Asks user if he wants to see raw data and (if yes) shows him 6 rows of data."""
     show_data = input('Do you want to see individual trip data according to your filter? (Type yes or no):')
     start_row=0
     print(show_data)
