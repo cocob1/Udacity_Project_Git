@@ -37,7 +37,7 @@ def get_filters():
     day = input("Do you want to analyse only one day of week? Then enter 'Mon', 'Tue', 'Wed', 'Thu','Fri', 'Sat' or 'Sun'. If you want to analyse all days of the week, type 'all':").lower()
     print(month)
     while day not in ['mon', 'tue', 'wed', 'thu','fri', 'sat', 'sun','all']:
-        print('Sorry, we couldn\'t find that day.')
+        print('Sorry, we couldn\'t find that day. Did you spell it correctly?')
         day = input("Please try again ('Mon', 'Tue', 'Wed', 'Thu','Fri', 'Sat', 'Sun' or 'all''):").lower()
  
     print("Great! You will get informations about {}!".format(day.title()))
@@ -99,7 +99,7 @@ def time_stats(df, month, day):
         df['month'] = df['Start Time'].dt.month
         popular_month = df['month'].mode()[0]    
         print(popular_month)
-        print('The most frequent month is {}.'.format(months[popular_month-1].title()))
+        print('The most frequent month for travelling is {}.'.format(months[popular_month-1].title()))
     else:
         print('You filtered data for {}, so that\'s the most common month in the dataset.'.format(month.title()))
 
@@ -108,14 +108,14 @@ def time_stats(df, month, day):
         days = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
         df['dayofweek'] = df['Start Time'].dt.dayofweek
         popular_day = df['dayofweek'].mode()[0]    
-        print('The most frequent day of week is {}.'.format(days[popular_day].title()))
+        print('The most frequent day of week for travelling is {}.'.format(days[popular_day].title()))
     else:
         print('You filtered data for {}, so that\'s the most common day of week in the dataset.'.format(day.title()))
                   
     # display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
     popular_hour = df['hour'].mode()[0]    
-    print('The most frequent start hour is {} o\'clock.'.format(popular_hour))
+    print('The most frequent start hour for travelling is {} o\'clock.'.format(popular_hour))
     
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
