@@ -214,6 +214,7 @@ def show_data(df):
             
 
 def main():
+    """Calls all defined functions to fullfill statistics wanted by user. Starts all over at the end, if user wants to analyse more."""
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
