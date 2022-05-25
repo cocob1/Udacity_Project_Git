@@ -37,7 +37,7 @@ def get_filters():
     day = input("Do you want to analyse only one day of week? Then enter 'Mon', 'Tue', 'Wed', 'Thu','Fri', 'Sat' or 'Sun'. If you want to analyse all days of the week, type 'all':").lower()
     print(month)
     while day not in ['mon', 'tue', 'wed', 'thu','fri', 'sat', 'sun','all']:
-        print('Sorry, we couldn\'t find that day.')
+        print('Sorry, we couldn\'t find that day. Did you spell it correctly?')
         day = input("Please try again ('Mon', 'Tue', 'Wed', 'Thu','Fri', 'Sat', 'Sun' or 'all''):").lower()
  
     print("Great! You will get informations about {}!".format(day.title()))
